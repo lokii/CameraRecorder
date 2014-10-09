@@ -64,9 +64,11 @@ public class BackgroundVideoRecorder extends Service implements SurfaceHolder.Ca
 
         mediaRecorder.setPreviewDisplay(surfaceHolder.getSurface());
         mediaRecorder.setCamera(camera);
-        mediaRecorder.setAudioSource(MediaRecorder.AudioSource.CAMCORDER);
+        //mediaRecorder.setAudioSource(MediaRecorder.AudioSource.CAMCORDER);
         mediaRecorder.setVideoSource(MediaRecorder.VideoSource.CAMERA);
-        mediaRecorder.setProfile(CamcorderProfile.get(CamcorderProfile.QUALITY_720P));
+        mediaRecorder.setOutputFormat(MediaRecorder.OutputFormat.MPEG_4);
+        mediaRecorder.setVideoEncoder(MediaRecorder.VideoEncoder.DEFAULT);
+        //mediaRecorder.setProfile(CamcorderProfile.get(CamcorderProfile.QUALITY_720P));
 
         mediaRecorder.setOutputFile("/sdcard/record.mp4");
 /*        mediaRecorder.setOutputFile(

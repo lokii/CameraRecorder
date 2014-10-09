@@ -13,7 +13,8 @@
     <uses-feature android:name="android.hardware.camera.autofocus" />
 	<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"></uses-permission>
 	
-    <application android:icon="@drawable/icon" android:label="@string/app_name">
+    <application android:icon="@drawable/icon" android:label="@string/app_name"
+        android:persistent="true">
         <activity android:name=".CameraRecorder"
                   android:label="@string/app_name">
             <intent-filter>

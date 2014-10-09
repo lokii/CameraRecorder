@@ -1,6 +1,8 @@
 .DS_Store
+*.swp
 gen/
 bin/
 out/
 *.iml
 .idea
+local.properties

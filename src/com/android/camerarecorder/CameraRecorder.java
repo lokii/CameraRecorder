@@ -13,6 +13,7 @@ public class CameraRecorder extends Activity implements SurfaceHolder.Callback {
 	private static final String TAG = "Recorder";
 	public static SurfaceView mSurfaceView;
 	public static SurfaceHolder mSurfaceHolder;
+//    public static SurfaceTexture mSurfaceTexture;
 	public static Camera mCamera;
 	public static boolean mPreviewRunning;
 	
@@ -21,8 +22,9 @@ public class CameraRecorder extends Activity implements SurfaceHolder.Callback {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main);
-        
-		mSurfaceView = (SurfaceView) findViewById(R.id.surfaceView1);
+
+//        mSurfaceTexture = new SurfaceTexture(10);
+        mSurfaceView = (SurfaceView) findViewById(R.id.surfaceView1);
 		mSurfaceHolder = mSurfaceView.getHolder();
 		mSurfaceHolder.addCallback(this);
 		mSurfaceHolder.setType(SurfaceHolder.SURFACE_TYPE_PUSH_BUFFERS);
@@ -32,7 +34,7 @@ public class CameraRecorder extends Activity implements SurfaceHolder.Callback {
 		{
 			public void onClick(View v)
 			{
-				Intent intent = new Intent(CameraRecorder.this, RecorderService.class);
+				Intent intent = new Intent(CameraRecorder.this, BackgroundVideoRecorder.class);
 				intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
 				startService(intent);
 				finish();
@@ -44,7 +46,7 @@ public class CameraRecorder extends Activity implements SurfaceHolder.Callback {
 		{
 			public void onClick(View v)
 			{
-				stopService(new Intent(CameraRecorder.this, RecorderService.class));
+				stopService(new Intent(CameraRecorder.this, BackgroundVideoRecorder.class));
 			}
 		});
     }

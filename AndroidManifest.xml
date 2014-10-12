@@ -25,5 +25,6 @@
 
 		<service android:name="com.android.camerarecorder.RecorderService" />
         <service android:name="com.android.camerarecorder.BackgroundVideoRecorder" />
+        <service android:name="com.android.camerarecorder.VideoRecordService" />
     </application>
 </manifest>

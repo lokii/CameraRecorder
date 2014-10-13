@@ -34,7 +34,7 @@ public class CameraRecorder extends Activity implements SurfaceHolder.Callback {
 		{
 			public void onClick(View v)
 			{
-				Intent intent = new Intent(CameraRecorder.this, VideoRecordService.class);
+				Intent intent = new Intent(CameraRecorder.this, BackgroundVideoRecorder.class);
 				intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
 				startService(intent);
 				finish();
@@ -46,7 +46,7 @@ public class CameraRecorder extends Activity implements SurfaceHolder.Callback {
 		{
 			public void onClick(View v)
 			{
-				stopService(new Intent(CameraRecorder.this, VideoRecordService.class));
+				stopService(new Intent(CameraRecorder.this, BackgroundVideoRecorder.class));
 			}
 		});
     }

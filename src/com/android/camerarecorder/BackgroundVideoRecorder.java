@@ -111,7 +111,6 @@ public class BackgroundVideoRecorder extends Service implements SurfaceHolder.Ca
 //            camera.setPreviewCallback(this);
         }
 
-        camera.startPreview();
         if (camera.getParameters().isVideoSnapshotSupported()) {
             new Handler().postDelayed(new Runnable() {
                 @Override
@@ -138,6 +137,7 @@ public class BackgroundVideoRecorder extends Service implements SurfaceHolder.Ca
             }, 1000);
         }
         camera.unlock();
+        camera.startPreview();
 //        mediaRecorder.setPreviewDisplay(mSurfaceHolder.getSurface());
         mediaRecorder.setCamera(camera);
         mediaRecorder.setAudioSource(MediaRecorder.AudioSource.CAMCORDER);
